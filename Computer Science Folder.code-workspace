@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Downloads/syn-nova"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Computer Science Folder"
+	}
+}
