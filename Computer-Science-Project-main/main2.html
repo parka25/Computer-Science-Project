@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <body style="background-color:black;">     
+    <head> 
+        <title class="Name"> Game Explorer Webpage</title> 
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <h1> Game Explorer</h1>
+    <img class="header_image" src="Images/istockphoto-1334436084-612x612.jpeg">
+    <p class="Intro">
+        Welcome to game Explorer, the ultimate website where 
+        anyone can access to information about different games. 
+        Either search the game that you want with a search bar 
+        or click on our most recent information on games! Feel free to
+        explore this world! Nice!
+    </p>
+    </form>
+    <div id='category-menu'>
+        <ul class="ul-category">
+            <li><a href = "./search.html">Search</a></li>
+        </ul>
+        <ul class='ul-category'>
+            <li><a>Categories</a>
+                <ul class='ul-subcategory'>
+                    <li><a>Adventure/RPG</a></li>
+                    <li><a>Roleplaying</a></li>
+                    <li><a>Online FPS</a></li>
+                    <li><a>Metroidvania</a></li>
+                    <li><a>Mobile</a></li>
+                    <li><a href="https://www.microsoft.com/en-us/store/collections/pcgames">PC</a></li>
+                    <li><a href="https://www.metacritic.com">Metacritic</a></li>
+                    <li><a href = "https://careers.uw.edu/blog/2020/04/28/the-top-50-video-game-design-companies-shared-article-from-gamedesigning-org/">Known Game Companies</a></li>
+                </ul>
+    </body>
+                
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+    $(function(){
+    //using jquery to loop each li element and automatically add an arrow span if the element contains a child of ul list
+    $('#category-menu ul li').each(function(){
+        if ($(this).find('ul').length > 0)
+        {
+            $(this).addClass("has-child");
+            $(this).prepend("<span class='arrow'></span>");
+        }
+    });
+    
+    //bind an event to the li link that contains a child of ul list.
+    $('#category-menu ul > li.has-child a').on("click", function(event){
+        var currentArrow = $(this).parent().find(" > span");
+        if($(currentArrow).length > 0){
+            if($(currentArrow).attr("class").indexOf("arrow-up") > 0){
+                $(currentArrow).removeClass("arrow-up");
+                $(currentArrow).parent().find(" > ul").slideUp();
+            }else{
+                $(currentArrow).addClass("arrow-up");
+                $(currentArrow).parent().find(" > ul").slideDown();
+            }
+        }
+    });
+});
+</script>
+</html>
