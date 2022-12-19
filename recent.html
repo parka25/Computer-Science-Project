@@ -4,7 +4,7 @@
         <title>Categories</title>
         <link rel="stylesheet" href="style.css">
     </Head>
-    <h1> Game Explorer</h1>
+    <h1> Recent Articles</h1>
     <ul>
         <div class="topnav">
         <li><a href="./main2.html">Home</a></li>
@@ -29,6 +29,21 @@
         </form>
         </div>
         </div>
+        <div id="my_article_container"></div>
           
     </ul>
 </html>
+<script>
+    fetch('articles.json')
+     .then(function(response) { return response.json();})
+     .then((data) => {appendData(data);});
+    function appendData(data) {
+        var container = Document.getElementById("my_article_container")
+        for (var i = 0; i < data.length; i++) {
+            var division = document.createElement("div");
+            div.innerHTML = "Title: " + "Author: " + "Date: " +"Description: ";
+            container.appendChild(div);
+        }
+    }
+    appendData()
+</script>
