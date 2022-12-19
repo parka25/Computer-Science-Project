@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <Head> 
-        <title>Categories</title>
+        <title>Recent Articles</title>
         <link rel="stylesheet" href="style.css">
     </Head>
     <h1> Recent Articles</h1>
@@ -38,12 +38,17 @@
      .then(function(response) { return response.json();})
      .then((data) => {appendData(data);});
     function appendData(data) {
-        var container = Document.getElementById("my_article_container")
+        var container = document.getElementById("my_article_container")
         for (var i = 0; i < data.length; i++) {
             var division = document.createElement("div");
-            div.innerHTML = "Title: " + "Author: " + "Date: " +"Description: ";
-            container.appendChild(div);
+            division.innerHTML = "Title: " + 
+            data[i].title + " Author: " + 
+            data[i].author + " Date: " + 
+            data[i].date +" Description: " + 
+            data[i].description;
+            container.appendChild(division);
         }
+        console.log(data)
     }
     appendData()
 </script>
